@@ -1,0 +1,4 @@
+<p>Some Flops</p>
+<div class="flop-voter">
+  <app-flop *ngFor="let flop of flops$ | async" [flopData]="flop"></app-flop>
+</div>
