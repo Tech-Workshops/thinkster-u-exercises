@@ -1,7 +1,7 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Flop } from '../../../shared/models/flop.model';
-import { FlopVotingService } from '../../services/flop-voting.service';
+import { FlopVotingService } from '../../../core/services/flop-voting/flop-voting.service';
 
 @Component({
   selector: 'app-flop',
@@ -15,7 +15,6 @@ export class FlopComponent implements OnInit, OnDestroy{
   public isVotingOpen: boolean = true;
 
   private flopVotingService: FlopVotingService;
-  private selectedFlop: string | null = null;
   private subscriptions = new Subscription();
 
   constructor(flopVotingService: FlopVotingService) {
@@ -23,9 +22,9 @@ export class FlopComponent implements OnInit, OnDestroy{
   }
 
   public ngOnInit(): void {
-    this.subscriptions.add(this.flopVotingService.selectedFlop$.subscribe((data: string) =>{
+    this.subscriptions.add(this.flopVotingService.selectedFlop$.subscribe((data: number) =>{
       this.isSelected = data === this.flopData?.id;
-      this.isVotingOpen = data === '';
+      this.isVotingOpen = data === -1;
     }));
   }
 

@@ -1,0 +1,16 @@
+<h4>Flop Chooser</h4>
+
+<div style="margin-bottom:2rem" >
+  <p>Which movie has a lower IMDB rating?</p>
+  <p [ngClass]="{'correct': isCorrectAnswer, 'incorrect': !isCorrectAnswer}" *ngFor="let flop of lowestRatedFlops">
+    {{flop.title}}
+  </p>
+  <button class="btn" (click)="addRandomFlop()">Add Another Flop</button>
+  <button *ngIf="lowestRatedFlops.length > 0" class="btn" (click)="reset()">Play Again</button>
+</div>
+
+<div class="chooser">
+  <div *ngFor="let flop of flopOptions">
+    <app-flop-choice [flop]="flop" (chosen)="flopChosen(flop)" ></app-flop-choice>
+  </div>
+</div>

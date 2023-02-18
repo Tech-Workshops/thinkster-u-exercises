@@ -1,5 +1,5 @@
 <div class="flop">
-  <img src="{{flopData?.imageUri}}" (click)="changeVote()">
+  <img src="{{flopData?.imageUrl}}" (click)="changeVote()">
 </div>
 <button class="vote-button" *ngIf="isVotingOpen || isSelected" (click)="changeVote()">
   <ng-container *ngIf="isVotingOpen; else notSelected">

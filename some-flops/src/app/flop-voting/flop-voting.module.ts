@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FlopVotingRoutingModule } from './flop-voting-routing.module';
 import { FlopVotingComponent } from './flop-voting.component';
 import { FlopComponent } from './components/flop/flop.component';
-import { FlopVotingService } from './services/flop-voting.service';
+import { FlopVotingService } from '../core/services/flop-voting/flop-voting.service';
 
 @NgModule({
   declarations: [

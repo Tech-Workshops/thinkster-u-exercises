@@ -8,8 +8,12 @@ const routes: Routes = [
     redirectTo: "flop-voting"
   },
   {
-    path: "flop-voting",
+    path: 'flop-voting',
     loadChildren: () => import('./flop-voting/flop-voting.module').then(m => m.FlopVotingModule)
+  },
+  {
+    path: 'flop-chooser',
+    loadChildren: () => import('./flop-chooser/flop-chooser.module').then(m =>m.FlopChooserModule)
   }
 ];
 
