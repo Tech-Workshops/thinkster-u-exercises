@@ -1,0 +1,32 @@
+mat-card {
+  background-color: azure;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+
+  & mat-card-actions {
+    justify-content: flex-end;
+
+    & fa-icon {
+      margin: 0px 4px 0px 4px;
+    }
+  }
+}
+
+.on-sale {
+  background-color: lightgreen;
+}
+
+.chevron-up-hidden {
+  display: none;
+}
+
+.chevron-down-hidden {
+  display: none;
+}
+
+.break {
+  flex-basis: 100%;
+  height: 0;
+}

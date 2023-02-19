@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FlopChooserService } from './flop-chooser/flop-chooser.service';
+import { FlopBusterService } from './flop-buster/flop-buster.service';
 import { FlopVotingService } from './flop-voting/flop-voting.service';
 import { FlopService } from './flop/flop.service';
 
@@ -11,8 +11,8 @@ import { FlopService } from './flop/flop.service';
   ],
   providers: [
     FlopService,
-    FlopChooserService,
-    FlopVotingService
+    FlopVotingService,
+    FlopBusterService
   ]
 })
 export class ServicesModule { }

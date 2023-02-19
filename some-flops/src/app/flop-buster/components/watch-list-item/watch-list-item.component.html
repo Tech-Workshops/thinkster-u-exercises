@@ -1,0 +1,18 @@
+<mat-card>
+  <mat-card-header>
+    {{watchListItem?.title}}
+  </mat-card-header>
+  <mat-card-actions>
+    <fa-icon [ngClass]="{'chevron-up-hidden': isChevronUpHidden}" [icon]="faChevronUp"></fa-icon>
+    <fa-icon [ngClass]="{'chevron-down-hidden': isChevronDownHidden}" [icon]="faChevronDown"></fa-icon>
+  </mat-card-actions>
+  <div class="break"></div>
+  <mat-card-content>
+    <div>
+      Price: {{watchListItem?.price}}
+    </div>
+    <div>
+      Release Date: {{watchListItem?.dateAdded | date:'dd/MM/YYYY'}}
+    </div>
+  </mat-card-content>
+</mat-card>

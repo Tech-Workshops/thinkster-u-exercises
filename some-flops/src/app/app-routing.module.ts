@@ -14,6 +14,10 @@ const routes: Routes = [
   {
     path: 'flop-chooser',
     loadChildren: () => import('./flop-chooser/flop-chooser.module').then(m =>m.FlopChooserModule)
+  },
+  {
+    path: 'flop-buster',
+    loadChildren: () => import('./flop-buster/flop-buster.module').then(m =>m.FlopBusterModule)
   }
 ];
 
