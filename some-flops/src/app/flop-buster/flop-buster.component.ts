@@ -27,4 +27,15 @@ export class FlopBusterComponent implements OnInit, OnDestroy {
   public ngOnDestroy(): void {
     this.subscriptions.unsubscribe();
   }
+
+  public moveItem(moveDirection: number, currentIndex: number) {
+    if (currentIndex + moveDirection < 0 ||
+        currentIndex + moveDirection >= this.watchListItems.length) {
+      return;
+    }
+
+    const tempItem = {...this.watchListItems[currentIndex]};
+    this.watchListItems[currentIndex] = {...this.watchListItems[currentIndex + moveDirection]}
+    this.watchListItems[currentIndex + moveDirection] = {...tempItem};
+  }
 }

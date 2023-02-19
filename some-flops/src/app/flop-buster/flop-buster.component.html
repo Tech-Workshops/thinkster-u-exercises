@@ -2,12 +2,13 @@
   <h4>Flopbuster Watch List</h4>
 
   <div class="watch-list">
-    <div *ngFor="let watchItem of watchListItems; let first = first; let last = last ">
+    <div *ngFor="let watchItem of watchListItems; let index = index; let first = first; let last = last ">
       <app-watch-list-item
         [watchListItem]="watchItem"
         [isChevronUpHidden]="first"
-        [isChevronDownHidden]="last">
-      </app-watch-list-item>
+        [isChevronDownHidden]="last"
+        (moveItem)="moveItem($event, index)"
+      ></app-watch-list-item>
     </div>
   </div>
 </div>

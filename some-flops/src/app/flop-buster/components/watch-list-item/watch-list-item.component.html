@@ -3,8 +3,16 @@
     {{watchListItem?.title}}
   </mat-card-header>
   <mat-card-actions>
-    <fa-icon [ngClass]="{'chevron-up-hidden': isChevronUpHidden}" [icon]="faChevronUp"></fa-icon>
-    <fa-icon [ngClass]="{'chevron-down-hidden': isChevronDownHidden}" [icon]="faChevronDown"></fa-icon>
+    <fa-icon
+      [ngClass]="{'chevron-up-hidden': isChevronUpHidden}"
+      [icon]="faChevronUp"
+      (click)="moveUp()"
+    ></fa-icon>
+    <fa-icon
+      [ngClass]="{'chevron-down-hidden': isChevronDownHidden}"
+      [icon]="faChevronDown"
+      (click)="moveDown()"
+    ></fa-icon>
   </mat-card-actions>
   <div class="break"></div>
   <mat-card-content>
