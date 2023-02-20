@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card [ngClass]="{'on-sale': watchListItem?.onSale}">
   <mat-card-header>
     {{watchListItem?.title}}
   </mat-card-header>

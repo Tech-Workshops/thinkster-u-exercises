@@ -1,8 +1,10 @@
 <div class="flop-buster">
-  <h4>Flopbuster Watch List</h4>
-
+  <div class="page-heading">
+    <h4>Flopbuster Watch List ({{watchListItems.length}})</h4>
+    <button (click)="showAll()">Show All</button>
+  </div>
   <div class="watch-list">
-    <div *ngFor="let watchItem of watchListItems; let index = index; let first = first; let last = last ">
+    <div *ngFor="let watchItem of watchListItems | slice:0:itemsToDisplay(); let index = index; let first = first; let last = last">
       <app-watch-list-item
         [watchListItem]="watchItem"
         [isChevronUpHidden]="first"

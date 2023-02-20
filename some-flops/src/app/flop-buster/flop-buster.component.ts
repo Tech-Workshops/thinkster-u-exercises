@@ -11,6 +11,7 @@ import { WatchListItem } from '../shared/models/watch-list-item.model';
 export class FlopBusterComponent implements OnInit, OnDestroy {
   private flopBusterService: FlopBusterService | undefined;
   private subscriptions: Subscription = new Subscription();
+  private numItemsToDisplay = 4;
 
   public watchListItems: WatchListItem[] = [];
 
@@ -28,9 +29,17 @@ export class FlopBusterComponent implements OnInit, OnDestroy {
     this.subscriptions.unsubscribe();
   }
 
+  public showAll(): void {
+    this.numItemsToDisplay = this.watchListItems.length;
+  }
+
+  public itemsToDisplay(): number {
+    return this.numItemsToDisplay;
+  }
+
   public moveItem(moveDirection: number, currentIndex: number) {
     if (currentIndex + moveDirection < 0 ||
-        currentIndex + moveDirection >= this.watchListItems.length) {
+        currentIndex + moveDirection > this.watchListItems.length) {
       return;
     }
 
