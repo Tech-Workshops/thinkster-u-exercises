@@ -5,7 +5,12 @@
       <mat-card>
         <mat-card-content>
           <img [src]="rental.imageUrl" alt="">
-          <button (click)="addToCart(rental)">Rent</button>
+          <button *ngIf="isInCart(rental); else rent" (click)="removeFromCart(rental)">
+            Remove from Cart
+          </button>
+          <ng-template #rent>
+            <button (click)="addToCart(rental)">Rent</button>
+          </ng-template>
         </mat-card-content>
       </mat-card>
     </ng-container>

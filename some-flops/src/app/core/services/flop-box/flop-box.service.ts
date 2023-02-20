@@ -12,7 +12,6 @@ export class FlopBoxService {
   private httpClient: HttpClient;
   private flopBoxCart: FlopBoxCart;
 
-  // Hacky way to create a cart without going full ecommerce on this.
   public cart$: ReplaySubject<FlopBoxCart> = new ReplaySubject<FlopBoxCart>()
 
   constructor(httpClient: HttpClient) {
