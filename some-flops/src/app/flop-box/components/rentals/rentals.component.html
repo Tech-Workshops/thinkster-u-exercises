@@ -1,0 +1,13 @@
+<div>
+  <h4>Rentals</h4>
+  <div class="rentals">
+    <ng-container *ngFor="let rental of rentals$ | async">
+      <mat-card>
+        <mat-card-content>
+          <img [src]="rental.imageUrl" alt="">
+          <button (click)="addToCart(rental)">Rent</button>
+        </mat-card-content>
+      </mat-card>
+    </ng-container>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+.rentals {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  & mat-card {
+    margin: 0 2em 2em 2em ;
+
+    & mat-card-content {
+      display: flex;
+      flex-direction: column;
+
+      & button {
+        margin-top: 3em;
+        background-color: green;
+        color: white;
+        height: 3em;
+      }
+    }
+  }
+}
+
+h4 {
+  margin-left: 2em;
+}

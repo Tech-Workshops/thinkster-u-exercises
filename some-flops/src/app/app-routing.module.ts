@@ -5,7 +5,7 @@ const routes: Routes = [
   {
     path: "",
     pathMatch: 'full',
-    redirectTo: "flop-voting"
+    redirectTo: "flop-box"
   },
   {
     path: 'flop-voting',
@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path: 'flop-buster',
     loadChildren: () => import('./flop-buster/flop-buster.module').then(m =>m.FlopBusterModule)
+  },
+  {
+    path: 'flop-box',
+    loadChildren: () => import('./flop-box/flop-box.module').then(m =>m.FlopBoxModule)
   }
 ];
 

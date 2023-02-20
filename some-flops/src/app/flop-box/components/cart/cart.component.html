@@ -1,0 +1,12 @@
+<mat-card>
+  <mat-card-content>
+    <div class="cart-content">
+      <div class="cart-description">
+        We have all the best flops in the business. Choose a flop to rent
+      </div>
+      <div>
+        Rentals: {{(cart$ | async)?.items?.length}}
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
